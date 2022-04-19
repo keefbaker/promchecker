@@ -1,0 +1,6 @@
+endpoints:
+  - url: https://thanos-query.awesomesite.com
+  - url: https://prometheus.test.thing.org
+  - url: https://prometheus.foo.bar.baz
+interval: 10
+report_frequency: 2
