@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: promchecker
+data:
+  config.yaml: |
+    endpoints:
+      - url: https://thanos-query.foo.bar/
+      - url: https://thanos-query.bar.baz
+      - url: https://prometheus.baz.qux
+    interval: 10
+    report_frequency: 2

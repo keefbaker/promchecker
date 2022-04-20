@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promchecker
+  labels:
+    app: promchecker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: promchecker
+  template:
+    metadata:
+      labels:
+        app: promchecker
+    spec:
+      containers:
+      - name: promchecker
+        image: keefbaker/promchecker:latest
+        volumeMounts:
+        - name: config-volume
+          mountPath: config.yaml
+          subPath: config.yaml
+      volumes:
+        - name: config-volume
+          configMap:
+            name: promchecker
